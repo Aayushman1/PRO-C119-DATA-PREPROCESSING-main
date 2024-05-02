@@ -159,6 +159,9 @@ def preprocess_train_data():
     
     # Convert Stem words and Classes to Python pickel file format
     
+    pickle.dump(stem_words, open('words.pkl','wb')) 
+    pickle.dump(tag_classes, open('classes.pkl','wb'))
+    
 
     train_x = bag_of_words_encoding(stem_words, word_tags_list)
     train_y = class_label_encoding(tag_classes, word_tags_list)
@@ -168,7 +171,7 @@ def preprocess_train_data():
 bow_data  , label_data = preprocess_train_data()
 
 # after completing the code, remove comment from print statements
-# print("first BOW encoding: " , bow_data[0])
-# print("first Label encoding: " , label_data[0])
+print("first BOW encoding: " , bow_data[0])
+print("first Label encoding: " , label_data[0])
 
 
